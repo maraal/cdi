@@ -12,7 +12,7 @@
   "basePath" : "/api",
   "schemes" : [ "https" ],
   "paths" : {
-    "/datasubject/v2/requestqueues/4CAT35SJDY/language/pt-br" : {
+    "/datasubject/v2/requestqueues/{requestQueueRefId}/language/pt-br" : {
       "get" : {
         "tags" : [ "swgf_onetrust_get_requestbyid" ],
         "summary" : null,
