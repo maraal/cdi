@@ -27,6 +27,11 @@
           "required" : false,
           "type" : "string"
         } ],
+          "name": "requestQueueRefId",
+          "in": "path",
+          "description": "Id que fez a requisição",
+          "required": true,
+          "type": "string"
         "responses" : {
           "200" : {
             "description" : "successful operation",
