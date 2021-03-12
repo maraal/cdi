@@ -26,7 +26,7 @@
           "description" : null,
           "required" : false,
           "type" : "string"
-        } , }
+        } , {
           "name": "requestQueueRefId",
           "in": "path",
           "description": "Id que fez a requisição",
