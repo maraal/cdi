@@ -12,7 +12,7 @@
   "basePath" : "/api",
   "schemes" : [ "https" ],
   "paths" : {
-    "/datasubject/v2/requestqueues/pt-br?status=Verificando%20a%20Identidade" : {
+    "/datasubject/v2/requestqueues/pt-br?status=Localizando%20Dados%20do%20Titular" : {
       "get" : {
         "tags" : [ "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular" ],
         "summary" : null,
