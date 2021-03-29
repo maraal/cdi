@@ -12,7 +12,7 @@
   "basePath" : "/api/datasubject/v2",
   "schemes" : [ "https" ],
   "paths" : {
-    "/datasubject/v2/requestqueues/65JDVHM7A2/comments" : {
+    "/datasubject/v2/requestqueues/{requestQueueRefId}/comments" : {
       "put" : {
         "tags" : [ "swgfile_onetrust_put_requestquee_comment" ],
         "summary" : null,
@@ -38,6 +38,12 @@
           "description" : null,
           "required" : false,
           "type" : "string"
+        }, {
+          "name": "requestQueueRefId",
+          "in": "path",
+          "description": "Id que fez a requisição",
+          "required": true,
+          "type": "string"
         } ],
         "responses" : {
           "200" : {
