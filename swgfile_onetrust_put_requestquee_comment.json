@@ -50,7 +50,7 @@
           "description" : null,
           "required" : false,
           "type" : "number"
-        ],
+        }],
         "responses" : {
           "200" : {
             "description" : "successful operation",
