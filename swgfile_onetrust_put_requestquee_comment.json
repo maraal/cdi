@@ -9,7 +9,7 @@
     "license" : null
   },
   "host" : "app-eu.onetrust.com",
-  "basePath" : "/api/datasubject/v2",
+  "basePath" : "/api",
   "schemes" : [ "https" ],
   "paths" : {
     "/datasubject/v2/requestqueues/{requestQueueRefId}/comments" : {
