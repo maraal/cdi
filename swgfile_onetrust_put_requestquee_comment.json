@@ -44,7 +44,13 @@
           "description": "Id que fez a requisição",
           "required": true,
           "type": "string"
-        } ],
+        }, {
+          "name" : "Content-Length",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "number"
+        ],
         "responses" : {
           "200" : {
             "description" : "successful operation",
