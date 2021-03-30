@@ -49,7 +49,8 @@
           "in" : "header",
           "description" : null,
           "required" : false,
-          "type" : "number"
+          "type" : "number",
+          "format" : "int32"
         }],
         "responses" : {
           "200" : {
