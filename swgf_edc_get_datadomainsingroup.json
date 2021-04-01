@@ -46,6 +46,11 @@
         },
         "groupId" : {
           "type" : "string"
+        },
+        "dataDomains" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/teste##dataDomains"
         }
       }
     }
