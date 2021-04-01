@@ -1,0 +1,183 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "edc.sodexo.com.br:9443",
+  "basePath" : "/access",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/2/catalog/data/objects/" : {
+      "get" : {
+        "tags" : [ "swgf_edc_get_objectswithdatadomain" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "swgf_edc_get_objectswithdatadomain",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "q",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "includeDstLinks",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "number",
+          "format" : "int32"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "number",
+          "format" : "int32"
+        }, {
+          "name" : "includeSrcLinks",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/swgf_edc_get_objectswithdatadomain"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "swgf_edc_get_objectswithdatadomain##metadata" : {
+      "properties" : {
+        "totalCount" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "swgf_edc_get_objectswithdatadomain##items##facts" : {
+      "properties" : {
+        "attributeId" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "string"
+        },
+        "readOnly" : {
+          "type" : "boolean"
+        },
+        "label" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "providerId" : {
+          "type" : "string"
+        },
+        "xid" : {
+          "type" : "string"
+        },
+        "modifiedBy" : {
+          "type" : "string"
+        },
+        "projectedFrom" : {
+          "type" : "string"
+        }
+      }
+    },
+    "swgf_edc_get_objectswithdatadomain##items##dstLinks" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        },
+        "readOnly" : {
+          "type" : "boolean"
+        },
+        "association" : {
+          "type" : "string"
+        },
+        "linkProperties" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "classType" : {
+          "type" : "string"
+        },
+        "providerId" : {
+          "type" : "string"
+        },
+        "xid" : {
+          "type" : "string"
+        },
+        "modifiedBy" : {
+          "type" : "string"
+        }
+      }
+    },
+    "swgf_edc_get_objectswithdatadomain##items" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "href" : {
+          "type" : "string"
+        },
+        "nativeId" : {
+          "type" : "number"
+        },
+        "facts" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/swgf_edc_get_objectswithdatadomain##items##facts"
+          }
+        },
+        "srcLinks" : {
+          "type" : "string"
+        },
+        "dstLinks" : {
+          "type" : "string"
+        },
+        "businessTerms" : {
+          "type" : "string"
+        }
+      }
+    },
+    "swgf_edc_get_objectswithdatadomain" : {
+      "properties" : {
+        "metadata" : {
+          "$ref" : "#/definitions/swgf_edc_get_objectswithdatadomain##metadata"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/swgf_edc_get_objectswithdatadomain##items"
+          }
+        }
+      }
+    }
+  }
+}
