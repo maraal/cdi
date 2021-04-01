@@ -13,7 +13,7 @@
   "schemes" : [ "https" ],
   "paths" : {
     "/1/catalog/datadomains/domaingrps/SDX_LGPD_FASE_02" : {
-      "get" : {
+      "get" : { 
         "tags" : [ "swgf_edc_get_datadomainsingroup" ],
         "summary" : null,
         "description" : null,
@@ -51,6 +51,7 @@
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/teste##dataDomains"
+          }
         }
       }
     }
