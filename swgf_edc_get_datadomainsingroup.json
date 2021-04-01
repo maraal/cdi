@@ -12,8 +12,8 @@
   "basePath" : "/access",
   "schemes" : [ "https" ],
   "paths" : {
-    "/1/catalog/datadomains/domaingrps/SDX_LGPD_FASE_02" : {
-      "get" : { 
+    "/1/catalog/datadomains/domaingrps/SDX_LGPD" : {
+      "get" : {
         "tags" : [ "swgf_edc_get_datadomainsingroup" ],
         "summary" : null,
         "description" : null,
@@ -33,6 +33,19 @@
     }
   },
   "definitions" : {
+    "swgf_edc_get_datadomainsingroup##dataDomains" : {
+      "properties" : {
+        "domainName" : {
+          "type" : "string"
+        },
+        "domainId" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        }
+      }
+    },
     "swgf_edc_get_datadomainsingroup" : {
       "properties" : {
         "groupName" : {
@@ -50,7 +63,7 @@
         "dataDomains" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/teste##dataDomains"
+            "$ref" : "#/definitions/swgf_edc_get_datadomainsingroup##dataDomains"
           }
         }
       }
