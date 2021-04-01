@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "edc.sodexo.com.br:9443",
+  "basePath" : "/access",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/1/catalog/datadomains/domaingrps/SDX_LGPD" : {
+      "get" : {
+        "tags" : [ "swgf_edc_get_datadomainsingroup" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "swgf_edc_get_datadomainsingroup",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/swgf_edc_get_datadomainsingroup"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "swgf_edc_get_datadomainsingroup" : {
+      "properties" : {
+        "groupName" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "type" : "string"
+        },
+        "groupId" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
