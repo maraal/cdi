@@ -12,7 +12,7 @@
   "basePath" : "/access",
   "schemes" : [ "https" ],
   "paths" : {
-    "/1/catalog/datadomains/domaingrps/SDX_LGPD_FASE_02" : {
+    "/1/catalog/datadomains/domaingrps/SDX_LGPD" : {
       "get" : {
         "tags" : [ "swgf_edc_get_datadomainsingroup" ],
         "summary" : null,
