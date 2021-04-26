@@ -12,7 +12,7 @@
   "basePath" : "/api",
   "schemes" : [ "https" ],
   "paths" : {
-"/v2/requestqueues/{language}": {
+      "/datasubject/v2/requestqueues/pt-br: {
       "get": {
         "tags": [
           "Request Queues"
@@ -277,5 +277,6 @@
           }
         ]
       }
+    }
   }
 }
