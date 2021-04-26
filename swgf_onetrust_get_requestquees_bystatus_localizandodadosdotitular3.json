@@ -25,7 +25,7 @@
           "in" : "query",
           "description" : null,
           "required" : false,
-          "type" : "ref",
+          "type" : "ref"
         }, {
           "name" : "apiKey",
           "in" : "header",
