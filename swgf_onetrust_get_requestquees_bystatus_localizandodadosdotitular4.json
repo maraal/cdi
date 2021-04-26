@@ -12,22 +12,15 @@
   "basePath" : "/api",
   "schemes" : [ "https" ],
   "paths" : {
-    "/datasubject/v2/requestqueues/pt-br?status=Localizando%20Dados%20Do%20Titular&size=20" : {
+    "/datasubject/v2/requestqueues/pt-br?status=Localizando%20Dados%20Do%20Titular&size=20&page=1" : {
       "get" : {
-        "tags" : [ "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2" ],
+        "tags" : [ "teste1" ],
         "summary" : null,
         "description" : null,
-        "operationId" : "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2",
+        "operationId" : "teste1",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "page",
-          "in" : "query",
-          "description" : null,
-          "required" : false,
-          "type" : "integer",
-          "format": "int32"
-        }, {
           "name" : "apiKey",
           "in" : "header",
           "description" : null,
@@ -38,7 +31,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2"
+              "$ref" : "#/definitions/teste1"
             }
           }
         }
@@ -46,7 +39,7 @@
     }
   },
   "definitions" : {
-    "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##content" : {
+    "teste1##content" : {
       "properties" : {
         "requestQueueRefId" : {
           "type" : "string"
@@ -125,7 +118,7 @@
         }
       }
     },
-    "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##pageable##sort" : {
+    "teste1##pageable##sort" : {
       "properties" : {
         "sorted" : {
           "type" : "boolean"
@@ -138,10 +131,10 @@
         }
       }
     },
-    "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##pageable" : {
+    "teste1##pageable" : {
       "properties" : {
         "sort" : {
-          "$ref" : "#/definitions/swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##pageable##sort"
+          "$ref" : "#/definitions/teste1##pageable##sort"
         },
         "pageNumber" : {
           "type" : "number",
@@ -163,7 +156,7 @@
         }
       }
     },
-    "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##sort" : {
+    "teste1##sort" : {
       "properties" : {
         "sorted" : {
           "type" : "boolean"
@@ -176,20 +169,16 @@
         }
       }
     },
-    "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2" : {
+    "teste1" : {
       "properties" : {
         "content" : {
           "type" : "array",
           "items" : {
-            "$ref" : "#/definitions/swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##content"
+            "$ref" : "#/definitions/teste1##content"
           }
         },
         "pageable" : {
-          "$ref" : "#/definitions/swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##pageable"
-        },
-        "totalElements" : {
-          "type" : "number",
-          "format" : "int32"
+          "$ref" : "#/definitions/teste1##pageable"
         },
         "totalPages" : {
           "type" : "number",
@@ -198,11 +187,15 @@
         "last" : {
           "type" : "boolean"
         },
+        "totalElements" : {
+          "type" : "number",
+          "format" : "int32"
+        },
         "first" : {
           "type" : "boolean"
         },
         "sort" : {
-          "$ref" : "#/definitions/swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2##sort"
+          "$ref" : "#/definitions/teste1##sort"
         },
         "size" : {
           "type" : "number",
