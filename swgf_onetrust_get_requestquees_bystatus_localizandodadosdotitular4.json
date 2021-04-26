@@ -25,7 +25,8 @@
           "in" : "query",
           "description" : null,
           "required" : false,
-          "type" : "ref"
+          "type" : "integer",
+          "format: "int32"
         }, {
           "name" : "apiKey",
           "in" : "header",
