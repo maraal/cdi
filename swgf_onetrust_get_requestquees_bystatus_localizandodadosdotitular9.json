@@ -25,13 +25,6 @@
         ],
         "parameters": [
           {
-            "name": "language",
-            "in": "path",
-            "description": "Provide the ISO language code for OneTrust supported languages. The language code provided here decides the language in which the request data is returned. \nExamples: en-us for English, de for German, fr for French, etc.",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "createddate",
             "in": "query",
             "description": "A date (yyyyMMdd). Include to retrieve a list of requests created on or after the specified date. For example, if you want to retrieve requests created on or after January 30, 2019, include the createddate=20190130 parameter in your query.",
