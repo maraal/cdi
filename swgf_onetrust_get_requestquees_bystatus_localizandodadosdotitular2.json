@@ -12,7 +12,7 @@
   "basePath" : "/api",
   "schemes" : [ "https" ],
   "paths" : {
-    "/datasubject/v2/requestqueues/pt-br?status=Localizando%20Dados%20Do%20Titular&size=20" : {
+    "/datasubject/v2/requestqueues/pt-br?status=Localizando%20Dados%20Do%20Titular&size=200" : {
       "get" : {
         "tags" : [ "swgf_onetrust_get_requestquees_bystatus_localizandodadosdotitular2" ],
         "summary" : null,
