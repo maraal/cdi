@@ -12,265 +12,213 @@
   "basePath" : "/api",
   "schemes" : [ "https" ],
   "paths" : {
-        "/v2/requestqueues/{language}": {
-      "get": {
-        "tags": [
-          "Request Queues"
+    "/datasubject/v2/requestqueues/pt-br?status=Localizando%20Dados%20Do%20Titular&size=20&{pgNo}" : {
+      "get" : {
+        "tags" : [ "teste1" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "teste1",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "apiKey",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        },
+        {
+          "name" : "pgNo",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "number",
+          "format": "int32"}
         ],
-        "summary": "Get All Requests",
-        "description": "Get a list of all the requests for your tenant. \nSample URL: https://{{domain}}.onetrust.com/api/datasubject/v2/requestqueues/en-us?page=0&size=20&sort=createdDate,asc&modifieddate=20190130",
-        "operationId": "getAllRequestQueuesV2UsingGET",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name" : "apiKey",
-            "in" : "header",
-            "description" : null,
-            "required" : true,
-            "type" : "string"
-          },
-          {
-            "name": "language",
-            "in": "path",
-            "description": "Provide the ISO language code for OneTrust supported languages. The language code provided here decides the language in which the request data is returned. \nExamples: en-us for English, de for German, fr for French, etc.",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "createddate",
-            "in": "query",
-            "description": "A date (yyyyMMdd). Include to retrieve a list of requests created on or after the specified date. For example, if you want to retrieve requests created on or after January 30, 2019, include the createddate=20190130 parameter in your query.",
-            "required": false,
-            "type": "string",
-            "allowEmptyValue": false
-          },
-          {
-            "name": "modifieddate",
-            "in": "query",
-            "description": "A date (yyyyMMdd). Include to retrieve a list of requests modified on or after the specified date. For example, if you want to retrieve requests modified on or after January 30, 2019, include the modifieddate = 20190130 parameter in your query.",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "status",
-            "in": "query",
-            "description": "Filter requests by stage name. Parameters must be URL encoded. Various stages in the order of progression are: New, Verifying identity, In progress, Rejected, Complete",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "description": "Results page you want to retrieve. Page number starts with 0 (0..N)",
-            "required": false,
-            "type": "ref"
-          },
-          {
-            "name": "size",
-            "in": "query",
-            "description": "Number of records per page. Maximum records per page allowed is 500.",
-            "required": false,
-            "type": "ref"
-          },
-          {
-            "name": "sort",
-            "in": "query",
-            "description": "Sorting criteria in the format: property, (asc|desc). Default sort order is ascending. ",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "content": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "approver": {
-                        "type": "string",
-                        "example": "Test User",
-                        "description": "approver or assignee for the request",
-                        "allowEmptyValue": false
-                      },
-                      "countryCode": {
-                        "type": "string",
-                        "example": "DZ",
-                        "description": "The code for the country as per ISO 3166. e.g. US for the United States, DE for Germany",
-                        "allowEmptyValue": false
-                      },
-                      "countryName": {
-                        "type": "string",
-                        "example": "Italy",
-                        "description": "Name of the country",
-                        "allowEmptyValue": false
-                      },
-                      "dateCompleted": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2019-05-31T12:43:24.173Z",
-                        "description": "Date on which the request is completed"
-                      },
-                      "dateCreated": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2019-08-09T12:49:47.983Z",
-                        "description": "Date on which request is submitted."
-                      },
-                      "dateUpdated": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2019-09-25T06:50:15.470Z",
-                        "description": "Last activity date on the request."
-                      },
-                      "deadline": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2019-09-08T12:49:47.920Z",
-                        "description": "Deadline for the request."
-                      },
-                      "email": {
-                        "type": "string",
-                        "example": "testuser@onetrust.com",
-                        "description": "Email provided while submitting the request",
-                        "allowEmptyValue": true
-                      },
-                      "firstName": {
-                        "type": "string",
-                        "example": "Test",
-                        "description": "First name of the data subject",
-                        "allowEmptyValue": true
-                      },
-                      "isExtended": {
-                        "type": "boolean",
-                        "example": false,
-                        "description": "Returns true if the request complete time is being extended."
-                      },
-                      "language": {
-                        "type": "string",
-                        "example": "en-us",
-                        "description": "Language in which the request is created"
-                      },
-                      "lastName": {
-                        "type": "string",
-                        "example": "User",
-                        "description": "Last name of the data subject",
-                        "allowEmptyValue": true
-                      },
-                      "organization": {
-                        "type": "string",
-                        "example": "Test organization",
-                        "description": "Organization to which this request is assigned",
-                        "allowEmptyValue": false
-                      },
-                      "requestQueueId": {
-                        "type": "string",
-                        "example": "e2d0f59e-3df0-4b1f-965d-d57547ed44ad",
-                        "description": "The request GUID"
-                      },
-                      "requestQueueRefId": {
-                        "type": "string",
-                        "example": "SL244HWD6D",
-                        "description": "Reference ID of the request. This is a 10-character ID that is unique to each request",
-                        "allowEmptyValue": false
-                      },
-                      "requestTypes": {
-                        "type": "array",
-                        "example": [
-                          "Data Portability, Update Data"
-                        ],
-                        "description": "Request types selected while submitting the request",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "resolution": {
-                        "type": "string",
-                        "example": "Not a privacy-related request",
-                        "description": "Resolution selected if the request is rejected"
-                      },
-                      "status": {
-                        "type": "string",
-                        "example": "NEW",
-                        "description": "Current stage of the request. Various stages in the order of progression are: New, Verifying identity, In progress, Rejected, Complete",
-                        "allowEmptyValue": false
-                      },
-                      "subjectTypes": {
-                        "type": "array",
-                        "example": [
-                          "Student"
-                        ],
-                        "description": "Subject types selected while submitting the request. Subject type can be: Prospective Employee, Student, Customer, Contractor, Employee, Patient",
-                        "allowEmptyValue": false,
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "webform": {
-                        "type": "string",
-                        "example": "Webform 1",
-                        "description": "Name of the webform",
-                        "allowEmptyValue": false
-                      },
-                      "workflow": {
-                        "type": "string",
-                        "example": "Default Workflow",
-                        "description": "Name of the request workflow"
-                      }
-                    },
-                    "title": "RequestQueueV2Dto",
-                    "description": "All details about the Request"
-                  }
-                },
-                "first": {
-                  "type": "boolean"
-                },
-                "last": {
-                  "type": "boolean"
-                },
-                "number": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "numberOfElements": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "size": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "sort": {
-                  "type": "object",
-                  "title": "Sort"
-                },
-                "totalElements": {
-                  "type": "integer",
-                  "format": "int64"
-                },
-                "totalPages": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              },
-              "title": "Page«RequestQueueV2Dto»"
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/teste1"
             }
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "404": {
-            "description": "Not Found"
           }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "teste1##content" : {
+      "properties" : {
+        "requestQueueRefId" : {
+          "type" : "string"
+        },
+        "requestQueueId" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "organization" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "requestTypes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "deadline" : {
+          "type" : "string"
+        },
+        "isExtended" : {
+          "type" : "boolean"
+        },
+        "dateCreated" : {
+          "type" : "string"
+        },
+        "dateUpdated" : {
+          "type" : "string"
+        },
+        "subjectTypes" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        },
+        "approver" : {
+          "type" : "string"
+        },
+        "language" : {
+          "type" : "string"
+        },
+        "countryCode" : {
+          "type" : "string"
+        },
+        "countryName" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "workflow" : {
+          "type" : "string"
+        },
+        "webform" : {
+          "type" : "string"
+        },
+        "dateCompleted" : {
+          "type" : "string"
+        },
+        "resolution" : {
+          "type" : "string"
+        },
+        "remainingDaysForMaxDeadline" : {
+          "type" : "string"
+        },
+        "maxDeadlineExtensionDate" : {
+          "type" : "string"
+        }
+      }
+    },
+    "teste1##pageable##sort" : {
+      "properties" : {
+        "sorted" : {
+          "type" : "boolean"
+        },
+        "unsorted" : {
+          "type" : "boolean"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "teste1##pageable" : {
+      "properties" : {
+        "sort" : {
+          "$ref" : "#/definitions/teste1##pageable##sort"
+        },
+        "pageNumber" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "pageSize" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "offset" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "paged" : {
+          "type" : "boolean"
+        },
+        "unpaged" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "teste1##sort" : {
+      "properties" : {
+        "sorted" : {
+          "type" : "boolean"
+        },
+        "unsorted" : {
+          "type" : "boolean"
+        },
+        "empty" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "teste1" : {
+      "properties" : {
+        "content" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/teste1##content"
+          }
+        },
+        "pageable" : {
+          "$ref" : "#/definitions/teste1##pageable"
+        },
+        "totalPages" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "last" : {
+          "type" : "boolean"
+        },
+        "totalElements" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "first" : {
+          "type" : "boolean"
+        },
+        "sort" : {
+          "$ref" : "#/definitions/teste1##sort"
+        },
+        "size" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "number" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "numberOfElements" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "empty" : {
+          "type" : "boolean"
         }
       }
     }
