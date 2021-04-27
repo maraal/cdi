@@ -25,6 +25,13 @@
         ],
         "parameters": [
           {
+            "name" : "apiKey",
+            "in" : "header",
+            "description" : null,
+            "required" : true,
+            "type" : "string"
+          },
+          {
             "name": "language",
             "in": "path",
             "description": "Provide the ISO language code for OneTrust supported languages. The language code provided here decides the language in which the request data is returned. \nExamples: en-us for English, de for German, fr for French, etc.",
