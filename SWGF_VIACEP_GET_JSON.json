@@ -1,0 +1,71 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "viacep.com.br",
+  "basePath" : "/ws",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/01001000/json/" : {
+      "get" : {
+        "tags" : [ "SWGF_VIACEP_GET_JSON" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "SWGF_VIACEP_GET_JSON",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/SWGF_VIACEP_GET_JSON"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "SWGF_VIACEP_GET_JSON" : {
+      "properties" : {
+        "cep" : {
+          "type" : "string"
+        },
+        "logradouro" : {
+          "type" : "string"
+        },
+        "complemento" : {
+          "type" : "string"
+        },
+        "bairro" : {
+          "type" : "string"
+        },
+        "localidade" : {
+          "type" : "string"
+        },
+        "uf" : {
+          "type" : "string"
+        },
+        "ibge" : {
+          "type" : "string"
+        },
+        "gia" : {
+          "type" : "string"
+        },
+        "ddd" : {
+          "type" : "string"
+        },
+        "siafi" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
