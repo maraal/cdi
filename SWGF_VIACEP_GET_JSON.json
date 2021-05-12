@@ -26,7 +26,7 @@
           "description": "Id que fez a requisição",
           "required": true,
           "type": "string"
-          ],
+        } ],
         "responses" : {
           "200" : {
             "description" : "successful operation",
