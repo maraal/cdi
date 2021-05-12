@@ -12,7 +12,7 @@
   "basePath" : "/ws",
   "schemes" : [ "https" ],
   "paths" : {
-    "/{cep}/json/" : {
+    "/{cep}/json/unicode" : {
       "get" : {
         "tags" : [ "SWGF_VIACEP_GET_JSON" ],
         "summary" : null,
