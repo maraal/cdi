@@ -12,7 +12,7 @@
   "basePath" : "/ws",
   "schemes" : [ "https" ],
   "paths" : {
-    "/01001000/json/" : {
+    "/{cep}/json/" : {
       "get" : {
         "tags" : [ "SWGF_VIACEP_GET_JSON" ],
         "summary" : null,
@@ -20,7 +20,13 @@
         "operationId" : "SWGF_VIACEP_GET_JSON",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
-        "parameters" : [ ],
+        "parameters" : [ { 
+          "name": "cep",
+          "in": "path",
+          "description": "Id que fez a requisição",
+          "required": true,
+          "type": "string"
+          ],
         "responses" : {
           "200" : {
             "description" : "successful operation",
