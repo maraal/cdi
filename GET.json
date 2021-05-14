@@ -12,7 +12,7 @@
   "basePath" : "/",
   "schemes" : [ "https" ],
   "paths" : {
-    "/todos" : {
+    "todos" : {
       "get" : {
         "tags" : [ "GET" ],
         "summary" : null,
