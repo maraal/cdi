@@ -9,10 +9,10 @@
     "license" : null
   },
   "host" : "jsonplaceholder.typicode.com",
-  "basePath" : "/todos",
+  "basePath" : "",
   "schemes" : [ "https" ],
   "paths" : {
-    "/" : {
+    "/todos" : {
       "get" : {
         "tags" : [ "GET2" ],
         "summary" : null,
